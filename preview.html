@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taiom Nunes | Portfólio Estrategista Digital Sênior</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Nunito (corpo) + Poppins (títulos) — identidade Taiom Nunes Ads -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            800: '#166534',
+                            900: '#14532d',
+                            accent: '#D4A24E', // Dourado da marca
+                        },
+                        slate: {
+                            950: '#0C0A09', // Preto quente da marca (--dark do brandbook)
+                        },
+                        emerald: {
+                            300: '#5FB6A3',
+                            400: '#1F8A76', // Verde-petróleo claro da marca
+                            500: '#1F8A76',
+                            600: '#146356', // Verde-petróleo da marca
+                            700: '#146356',
+                            950: '#0A211D',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Nunito', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-panel {
+            background: rgba(15, 23, 42, 0.45);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #ffffff 30%, #B9E4D9 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .text-gradient-accent {
+            background: linear-gradient(135deg, #D4A24E 0%, #E8C179 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased overflow-x-hidden">
+
+
+    <!-- Navbar -->
+    <nav class="fixed top-0 left-0 w-full z-50 glass-panel border-b border-slate-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center gap-2.5">
+                    <svg width="30" height="30" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <defs><linearGradient id="navLogoGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+                            <stop offset="0%" stop-color="#146356"/><stop offset="100%" stop-color="#D4A24E"/>
+                        </linearGradient></defs>
+                        <path d="M100,100 m-45,0 a45,45 0 1,1 90,0 a45,45 0 1,1 -90,0" fill="none" stroke="url(#navLogoGrad)" stroke-width="8" stroke-linecap="round" stroke-dasharray="212 71" transform="rotate(130 100 100)"/>
+                        <path d="M100,100 m-28,0 a28,28 0 1,1 56,0 a28,28 0 1,1 -56,0" fill="none" stroke="url(#navLogoGrad)" stroke-width="8" stroke-linecap="round" stroke-dasharray="132 44" transform="rotate(150 100 100)"/>
+                        <line x1="100" y1="92" x2="100" y2="113" stroke="#D4A24E" stroke-width="5" stroke-linecap="round"/>
+                        <line x1="89" y1="92" x2="111" y2="92" stroke="#D4A24E" stroke-width="5" stroke-linecap="round"/>
+                    </svg>
+                    <span class="text-xl font-extrabold tracking-wider text-gradient">TAIOM NUNES</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-300">
+                    <a href="#sobre" class="hover:text-emerald-400 transition">Filosofia</a>
+                    <a href="#experiencia" class="hover:text-emerald-400 transition">Marcas</a>
+                    <a href="#ferramentas" class="hover:text-emerald-400 transition">Especialidades</a>
+                    <a href="#contato" class="bg-emerald-700/80 hover:bg-emerald-600 text-white px-5 py-2.5 rounded-lg border border-emerald-500/30 transition shadow-lg shadow-emerald-950/20">Falar com Consultor</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-slate-300 hover:text-white focus:outline-none">
+                        <i data-lucide="menu" class="h-6 w-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden glass-panel px-4 pt-2 pb-6 space-y-3 border-t border-slate-900">
+            <a href="#sobre" class="block text-slate-300 hover:text-emerald-400 py-2">Filosofia</a>
+            <a href="#experiencia" class="block text-slate-300 hover:text-emerald-400 py-2">Marcas</a>
+            <a href="#ferramentas" class="block text-slate-300 hover:text-emerald-400 py-2">Especialidades</a>
+            <a href="#contato" class="block bg-emerald-700/80 text-center text-white py-3 rounded-lg">Falar com Consultor</a>
+        </div>
+    </nav>
+
+
+    <!-- Hero Section -->
+    <header class="relative pt-36 pb-20 md:py-48 overflow-hidden">
+        <!-- Background Ambient Lights -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-emerald-950/30 rounded-full blur-[140px] pointer-events-none"></div>
+        <div class="absolute top-1/3 left-1/4 w-[300px] h-[300px] bg-brand-accent/10 rounded-full blur-[120px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Main Text -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full glass-panel text-xs text-brand-accent font-semibold tracking-wider uppercase">
+                        <span class="h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                        Disponível para Projetos Exclusivos em 2026
+                    </span>
+                    <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-tight">
+                        Estrategista de Mídia. <br class="hidden sm:block">
+                        <span class="text-gradient">Alta Performance</span> para Lançamentos de Alto Padrão.
+                    </h1>
+                    <p class="text-slate-400 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 font-medium">
+                        Mais de um milhão e meio de reais em mídia paga otimizados com rigor analítico. Especialista em funis complexos para o mercado imobiliário premium e contas corporativas B2B de escala nacional.
+                    </p>
+                    <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
+                        <a href="#contato" class="inline-flex items-center justify-center gap-2 bg-emerald-700 hover:bg-emerald-600 text-white font-semibold py-3.5 px-8 rounded-lg shadow-lg shadow-emerald-950/40 transition">
+                            Contratar Consultoria
+                            <i data-lucide="arrow-right" class="h-5 w-5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Stats Visual Panel -->
+                <div class="lg:col-span-5 relative mt-8 lg:mt-0">
+                    <div class="glass-panel p-8 sm:p-10 rounded-2xl border border-slate-800/80 shadow-2xl relative">
+                        <div class="absolute -top-4 -right-4 h-12 w-12 rounded-full bg-emerald-500/10 flex items-center justify-center border border-emerald-500/20">
+                            <i data-lucide="award" class="text-emerald-400 h-6 w-6"></i>
+                        </div>
+                        <h3 class="text-slate-400 font-bold tracking-wider text-xs uppercase mb-8">Performance Consolidada</h3>
+                        
+                        <div class="space-y-6">
+                            <div>
+                                <span class="text-4xl sm:text-5xl font-extrabold text-gradient">+R$ 1,5M</span>
+                                <p class="text-slate-400 text-sm mt-1">Gerenciados em tráfego pago</p>
+                            </div>
+                            <div class="border-t border-slate-900 pt-6">
+                                <span class="text-4xl sm:text-5xl font-extrabold text-gradient-accent">40+</span>
+                                <p class="text-slate-400 text-sm mt-1">Contas de anúncios de alto padrão controladas</p>
+                            </div>
+                            <div class="border-t border-slate-900 pt-6">
+                                <span class="text-4xl sm:text-5xl font-extrabold text-gradient">15</span>
+                                <p class="text-slate-400 text-sm mt-1">Lançamentos verticais simultâneos (CITY Inc.)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+
+    <!-- Core Philosophy Section -->
+    <section id="sobre" class="py-24 border-t border-slate-900 bg-slate-950/50 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Graphic Representation of "Artes Cênicas" x "Tráfego" -->
+                <div class="lg:col-span-5 space-y-4 order-last lg:order-first">
+                    <div class="glass-panel p-6 rounded-xl border border-slate-800/40 relative overflow-hidden group">
+                        <div class="absolute top-0 right-0 h-24 w-24 bg-brand-accent/5 rounded-full blur-2xl"></div>
+                        <div class="flex items-start gap-4">
+                            <div class="p-3 rounded-lg bg-emerald-950/50 text-emerald-400">
+                                <i data-lucide="drama" class="h-6 w-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-base font-bold text-slate-100 mb-1">Mestrado em Artes da Cena (UFG)</h4>
+                                <p class="text-slate-400 text-sm">Uso das metodologias de análise profunda de personagens e dramaturgia para mapear a psicologia do consumidor e estruturar copywritings hipnóticos.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-panel p-6 rounded-xl border border-slate-800/40 relative overflow-hidden group">
+                        <div class="absolute top-0 right-0 h-24 w-24 bg-emerald-950/10 rounded-full blur-2xl"></div>
+                        <div class="flex items-start gap-4">
+                            <div class="p-3 rounded-lg bg-emerald-950/50 text-emerald-400">
+                                <i data-lucide="binary" class="h-6 w-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-base font-bold text-slate-100 mb-1">Engenharia de Dados e IAs</h4>
+                                <p class="text-slate-400 text-sm">GTM avançado, GA4 e prompts lógicos estruturados no Claude e Gemini para decodificar comportamentos ocultos que reduzem o CPL.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Philosophy Copywriting text -->
+                <div class="lg:col-span-7 space-y-6">
+                    <span class="text-brand-accent font-bold tracking-widest text-xs uppercase block">O Diferencial Estratégico</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">
+                        Tráfego Pago não é apenas apertar botões. <br>
+                        <span class="text-gradient">É sobre decifrar personagens.</span>
+                    </h2>
+                    <p class="text-slate-300 leading-relaxed text-base sm:text-lg">
+                        Muitos gestores encaram dados como meras planilhas estáticas. No meu ecossistema de performance, **eu utilizo meu background de Mestre acadêmico pelas Artes Cênicas** como uma ferramenta de alta conversão.
+                    </p>
+                    <p class="text-slate-400 leading-relaxed text-sm sm:text-base">
+                        A análise dramática me permite estruturar a jornada de compra de forma cirúrgica. Eu estudo as dores ocultas, as aspirações de ego e os desejos reais do comprador de altíssimo padrão (R$ 5M+). O resultado? Criativos, roteiros e copys lógicos que quebram a resistência à venda instantaneamente.
+                    </p>
+                    <div class="pt-4 flex items-center gap-3">
+                        <div class="h-10 w-10 rounded-full bg-slate-900 border border-slate-800 flex items-center justify-center text-emerald-400 font-bold text-xs">TN</div>
+                        <div>
+                            <span class="block text-sm font-bold text-slate-100">Taiom Nunes</span>
+                            <span class="block text-xs text-slate-500">Mestre pela UFG & Especialista em Conversão Sobral</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Brands & Achievements Section -->
+    <section id="experiencia" class="py-24 border-t border-slate-900 bg-slate-950 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <span class="text-brand-accent font-bold tracking-widest text-xs uppercase block">Marcas e Credenciais</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">
+                    Experiência em <span class="text-gradient">Incorporadoras de Prestígio</span> e Empresas Robustas
+                </h2>
+                <p class="text-slate-400 text-sm sm:text-base">
+                    Atuação ativa e de alto nível na coordenação estratégica de campanhas nacionais e locais no setor de altíssimo luxo imobiliário e B2B corporativo.
+                </p>
+            </div>
+
+            <!-- Brands Display -->
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-4 lg:gap-6">
+                <div class="glass-panel p-6 rounded-xl flex flex-col items-center justify-center text-center hover:border-emerald-500/20 transition group">
+                    <span class="font-extrabold tracking-widest text-slate-300 text-lg sm:text-xl group-hover:text-emerald-400 transition">BRASAL</span>
+                    <span class="text-[10px] text-brand-accent uppercase font-bold mt-2">Mídia do Lançamento</span>
+                </div>
+                <div class="glass-panel p-6 rounded-xl flex flex-col items-center justify-center text-center hover:border-emerald-500/20 transition group">
+                    <span class="font-extrabold tracking-widest text-slate-300 text-lg sm:text-xl group-hover:text-emerald-400 transition">CITY INC.</span>
+                    <span class="text-[10px] text-brand-accent uppercase font-bold mt-2">15 Lançamentos</span>
+                </div>
+                <div class="glass-panel p-6 rounded-xl flex flex-col items-center justify-center text-center hover:border-emerald-500/20 transition group">
+                    <span class="font-extrabold tracking-widest text-slate-300 text-lg sm:text-xl group-hover:text-emerald-400 transition">GPL</span>
+                    <span class="text-[10px] text-brand-accent uppercase font-bold mt-2">Médio/Alto Padrão</span>
+                </div>
+                <div class="glass-panel p-6 rounded-xl flex flex-col items-center justify-center text-center hover:border-emerald-500/20 transition group">
+                    <span class="font-extrabold tracking-widest text-slate-300 text-lg sm:text-xl group-hover:text-emerald-400 transition">PORTAL SOL</span>
+                    <span class="text-[10px] text-brand-accent uppercase font-bold mt-2">Condomínios de Luxo</span>
+                </div>
+                <div class="glass-panel p-6 rounded-xl flex flex-col items-center justify-center text-center hover:border-emerald-500/20 transition group">
+                    <span class="font-extrabold tracking-widest text-slate-300 text-lg sm:text-xl group-hover:text-emerald-400 transition">ECCAPLAN</span>
+                    <span class="text-[10px] text-brand-accent uppercase font-bold mt-2">B2B Corp. (20k/mês)</span>
+                </div>
+            </div>
+
+            <!-- Tabbed Projects Showcase -->
+            <div class="mt-16 bg-slate-900/30 border border-slate-800/40 rounded-2xl p-6 sm:p-8 lg:p-10">
+                <div class="flex flex-col lg:flex-row gap-8">
+                    <!-- Sidebar list of experience modes -->
+                    <div class="lg:w-1/3 space-y-4">
+                        <button onclick="switchTab('realestate')" id="tab-realestate" class="w-full text-left p-4 rounded-xl border border-emerald-500/20 bg-emerald-950/20 text-emerald-400 transition flex items-center justify-between">
+                            <span class="font-bold text-sm">Mercado Imobiliário de Alto Padrão</span>
+                            <i data-lucide="building-2" class="h-4 w-4"></i>
+                        </button>
+                        <button onclick="switchTab('b2b')" id="tab-b2b" class="w-full text-left p-4 rounded-xl border border-transparent text-slate-400 hover:text-slate-200 transition flex items-center justify-between">
+                            <span class="font-bold text-sm">B2B Corporativo & Serviços</span>
+                            <i data-lucide="briefcase" class="h-4 w-4"></i>
+                        </button>
+                    </div>
+
+                    <!-- Details Display area -->
+                    <div class="lg:w-2/3">
+                        <!-- REAL ESTATE DETAIL -->
+                        <div id="content-realestate" class="space-y-6">
+                            <h3 class="text-xl font-bold text-slate-100 flex items-center gap-2">
+                                <span class="h-2 w-2 rounded-full bg-emerald-400"></span>
+                                Performance e Gestão de Lançamentos
+                            </h3>
+                            <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
+                                Estruturação e escala de tráfego pago na Escada Inteligência Imobiliária para produtos com VGV (Valor Geral de Vendas) massivo. Controle dinâmico de orçamento e captação de leads de altíssimo poder aquisitivo no Setor Marista, Bueno e GO-020.
+                            </p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div class="p-4 rounded-lg bg-slate-950/60 border border-slate-800/30">
+                                    <span class="block text-xs text-brand-accent uppercase font-bold">Lançamentos de Luxo</span>
+                                    <p class="text-sm text-slate-300 mt-1">Coordenação e gestão de tráfego integrada para mais de 15 lançamentos residenciais de altíssimo luxo ao mesmo tempo.</p>
+                                </div>
+                                <div class="p-4 rounded-lg bg-slate-950/60 border border-slate-800/30">
+                                    <span class="block text-xs text-brand-accent uppercase font-bold">Escala de Verba</span>
+                                    <p class="text-sm text-slate-300 mt-1">Gerenciamento dinâmico de mais de R$ 150.000,00 mensais em canais digitais durante períodos de pico de campanhas.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- B2B DETAIL (Hidden by default) -->
+                        <div id="content-b2b" class="space-y-6 hidden">
+                            <h3 class="text-xl font-bold text-slate-100 flex items-center gap-2">
+                                <span class="h-2 w-2 rounded-full bg-amber-400"></span>
+                                Funis Avançados de Captação B2B
+                            </h3>
+                            <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
+                                Campanhas cirúrgicas voltadas para diretores, gestores e tomadores de decisão de grandes empresas. Gestão de canais de aquisição de clientes qualificados na agência Austral.
+                            </p>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div class="p-4 rounded-lg bg-slate-950/60 border border-slate-800/30">
+                                    <span class="block text-xs text-brand-accent uppercase font-bold">Eccaplan (Mídia Ambiental)</span>
+                                    <p class="text-sm text-slate-300 mt-1">Gestão mensal de R$ 20.000,00 focados na captação de clientes jurídicos que demandam conformidade com leis ambientais de carbono neutro.</p>
+                                </div>
+                                <div class="p-4 rounded-lg bg-slate-950/60 border border-slate-800/30">
+                                    <span class="block text-xs text-brand-accent uppercase font-bold">Hospital dos Olhos</span>
+                                    <p class="text-sm text-slate-300 mt-1">Desenvolvimento de estratégias de captação local de pacientes qualificados em Minas Gerais com investimentos de R$ 15k/mês.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Tech Stack / Skills Section -->
+    <section id="ferramentas" class="py-24 border-t border-slate-900 bg-slate-950 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="text-brand-accent font-bold tracking-widest text-xs uppercase block">Conhecimento Prático</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">
+                        Especialista em <br class="hidden sm:block">
+                        <span class="text-gradient">Ferramentas de Tração</span> e Analytics Avançado.
+                    </h2>
+                    <p class="text-slate-400 leading-relaxed text-sm sm:text-base">
+                        Campanhas eficientes necessitam de rastreabilidade completa. Meu foco técnico é estruturar o ecossistema digital para que cada centavo investido possa ser rastreado e mensurado através de dashboards transparentes.
+                    </p>
+                    <div class="flex flex-wrap gap-2 pt-2">
+                        <span class="bg-slate-900 border border-slate-800 text-slate-300 py-1.5 px-3.5 rounded-lg text-xs font-semibold">Meta Ads</span>
+                        <span class="bg-slate-900 border border-slate-800 text-slate-300 py-1.5 px-3.5 rounded-lg text-xs font-semibold">Google Ads</span>
+                        <span class="bg-slate-900 border border-slate-800 text-slate-300 py-1.5 px-3.5 rounded-lg text-xs font-semibold">Google Tag Manager (GTM)</span>
+                        <span class="bg-slate-900 border border-slate-800 text-slate-300 py-1.5 px-3.5 rounded-lg text-xs font-semibold">Google Analytics (GA4)</span>
+                        <span class="bg-slate-900 border border-slate-800 text-slate-300 py-1.5 px-3.5 rounded-lg text-xs font-semibold">RD Station</span>
+                        <span class="bg-slate-900 border border-slate-800 text-slate-300 py-1.5 px-3.5 rounded-lg text-xs font-semibold">Facilita</span>
+                    </div>
+                </div>
+
+                <!-- Features Cards Grid -->
+                <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <!-- Card 1 -->
+                    <div class="glass-panel p-6 rounded-xl border border-slate-800/40 hover:border-emerald-500/20 transition group">
+                        <div class="h-10 w-10 rounded-lg bg-emerald-950/40 text-emerald-400 flex items-center justify-center mb-4">
+                            <i data-lucide="target" class="h-5 w-5"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-100 text-base mb-2 group-hover:text-emerald-400 transition">Rastreabilidade</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">Configuração avançada de API de Conversões do Meta, instalação customizada de tags no GTM sem perdas de cookies no navegador.</p>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="glass-panel p-6 rounded-xl border border-slate-800/40 hover:border-emerald-500/20 transition group">
+                        <div class="h-10 w-10 rounded-lg bg-emerald-950/40 text-emerald-400 flex items-center justify-center mb-4">
+                            <i data-lucide="sparkles" class="h-5 w-5"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-100 text-base mb-2 group-hover:text-emerald-400 transition">Estratégias de IA</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">Uso cirúrgico de inteligências artificiais gerativas para produção ágil de variações de copys, análises de concorrência e descrições de personas.</p>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="glass-panel p-6 rounded-xl border border-slate-800/40 hover:border-emerald-500/20 transition group">
+                        <div class="h-10 w-10 rounded-lg bg-emerald-950/40 text-emerald-400 flex items-center justify-center mb-4">
+                            <i data-lucide="bar-chart-3" class="h-5 w-5"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-100 text-base mb-2 group-hover:text-emerald-400 transition">Integração Comercial</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">Envio instantâneo de leads qualificados para sistemas integrados de CRM como Facilita e RD Station, otimizando o tempo de resposta comercial.</p>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="glass-panel p-6 rounded-xl border border-slate-800/40 hover:border-emerald-500/20 transition group">
+                        <div class="h-10 w-10 rounded-lg bg-emerald-950/40 text-emerald-400 flex items-center justify-center mb-4">
+                            <i data-lucide="users" class="h-5 w-5"></i>
+                        </div>
+                        <h3 class="font-bold text-slate-100 text-base mb-2 group-hover:text-emerald-400 transition">Comunidade Sobral</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed">Acesso vitalício à maior comunidade de tráfego do Brasil, com updates em tempo real sobre as atualizações das grandes plataformas de mídia.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Contact & Call to Action Section -->
+    <section id="contato" class="py-24 border-t border-slate-900 bg-slate-950 relative">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-emerald-950/20 rounded-full blur-[120px] pointer-events-none"></div>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="glass-panel p-8 sm:p-12 rounded-3xl border border-slate-800 shadow-2xl text-center space-y-8">
+                <span class="text-brand-accent font-bold tracking-widest text-xs uppercase">Alta Escala Digital</span>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight">
+                    Pronto para <span class="text-gradient">Escalar seus Resultados</span>?
+                </h2>
+                <p class="text-slate-400 text-base sm:text-lg max-w-xl mx-auto">
+                    Não perca mais dinheiro gerando leads frios. Vamos estruturar campanhas direcionadas ao público certo — seja para o mercado imobiliário de alto padrão, contas B2B corporativas ou qualquer negócio que exige performance de verdade.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row justify-center items-center gap-4 pt-4">
+                    <a href="https://wa.me/5562982180574?text=Olá,%20Taiom.%20Acessei%20seu%20portfólio%20e%20gostaria%20de%20agendar%20uma%20reunião%20estratégica." target="_blank" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-emerald-700 hover:bg-emerald-600 text-white font-bold py-4 px-8 rounded-xl shadow-lg transition">
+                        <i data-lucide="phone" class="h-5 w-5"></i>
+                        Falar no WhatsApp (62) 98218-0574
+                    </a>
+                    <a href="https://www.linkedin.com/in/taweragt" target="_blank" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 glass-panel hover:bg-slate-900 text-slate-300 font-bold py-4 px-8 rounded-xl transition">
+                        <i data-lucide="linkedin" class="h-5 w-5"></i>
+                        Conectar via LinkedIn
+                    </a>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-lg mx-auto pt-8 border-t border-slate-900 text-left text-xs text-slate-500">
+                    <p class="flex items-center gap-2">
+                        <i data-lucide="check" class="text-emerald-400 h-4 w-4"></i>
+                        Análise de contingência inclusa.
+                    </p>
+                    <p class="flex items-center gap-2">
+                        <i data-lucide="check" class="text-emerald-400 h-4 w-4"></i>
+                        Criação de dashboards exclusivos.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-slate-900 bg-slate-950 text-slate-500 text-center text-xs space-y-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <svg width="28" height="28" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" class="mx-auto mb-4" aria-hidden="true">
+                <defs><linearGradient id="footLogoGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#146356"/><stop offset="100%" stop-color="#D4A24E"/>
+                </linearGradient></defs>
+                <path d="M100,100 m-45,0 a45,45 0 1,1 90,0 a45,45 0 1,1 -90,0" fill="none" stroke="url(#footLogoGrad)" stroke-width="8" stroke-linecap="round" stroke-dasharray="212 71" transform="rotate(130 100 100)"/>
+                <path d="M100,100 m-28,0 a28,28 0 1,1 56,0 a28,28 0 1,1 -56,0" fill="none" stroke="url(#footLogoGrad)" stroke-width="8" stroke-linecap="round" stroke-dasharray="132 44" transform="rotate(150 100 100)"/>
+                <line x1="100" y1="92" x2="100" y2="113" stroke="#D4A24E" stroke-width="5" stroke-linecap="round"/>
+                <line x1="89" y1="92" x2="111" y2="92" stroke="#D4A24E" stroke-width="5" stroke-linecap="round"/>
+            </svg>
+            <p>© 2026 Taiom Nunes. Todos os direitos reservados. Goiânia/GO.</p>
+            <p class="text-[10px] text-slate-700">Desenvolvido sob o padrão técnico de alta performance.</p>
+        </div>
+    </footer>
+
+
+    <!-- Scripting and Interactive Logic -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Mobile Menu Toggle
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        if (mobileBtn) {
+            mobileBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        // Close mobile menu on anchor click
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Tab Switching Logic (Experiences)
+        function switchTab(tabId) {
+            const tabs = ['realestate', 'b2b'];
+            tabs.forEach(item => {
+                const button = document.getElementById(`tab-${item}`);
+                const content = document.getElementById(`content-${item}`);
+                
+                if (item === tabId) {
+                    button.classList.add('border-emerald-500/20', 'bg-emerald-950/20', 'text-emerald-400');
+                    button.classList.remove('border-transparent', 'text-slate-400');
+                    content.classList.remove('hidden');
+                } else {
+                    button.classList.remove('border-emerald-500/20', 'bg-emerald-950/20', 'text-emerald-400');
+                    button.classList.add('border-transparent', 'text-slate-400');
+                    content.classList.add('hidden');
+                }
+            });
+        }
+
+    </script>
+</body>
+</html>
